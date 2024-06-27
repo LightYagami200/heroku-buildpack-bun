@@ -30,6 +30,12 @@ export BUN_DIR=$BUILD_DIR/.heroku/cache
 curl -fsSL https://bun.sh/install | bash $INSTALL_VERSION_OPTION
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# install node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+nvm install 20
+node -v
+npm -v
+
 # set environment variables
 PROFILE_PATH="$BUILD_DIR/.profile.d/bun.sh"
 mkdir -p $(dirname $PROFILE_PATH)
